@@ -9,14 +9,14 @@
   [name]
   (let [data {:name name
               :sanitized (name-to-path name)}]
-    (println "Generating a new ClojureScript project ex nihilo:" (str name "..."))
+    (println "\nAnd then some programmer said, \n 'Let there be a ClojureScript project!'
+                   \nAnd so was born" (str name "...") )
     (->files data
-             ["project.clj" (render "project.cljs" data)]
+             ["project.clj" (render "project.clj" data)]
              ["README.md"   (render "README.md")]
              ["src/clj/{{sanitized}}/server.clj"      (render "server.clj" data)]
-             ["src/{{sanitized}}/server.clj"       (render "client.clj" data)]
-             ["resources/public/css/style.css" (render "screen.css" data)]
-             ["resources/public/css/style.scss" (render "screen.scss" data)]
-             ["resources/public/index.html" (render "index.html" data)]
-             ["resources/public/js"]
-             ["resources/public/img"])))
+             ["src/cljs/{{sanitized}}/client.cljs"       (render "client.cljs" data)]
+             ["resources/public/css/style.css" (render "style.css" data)]
+             ["resources/public/css/style.scss" (render "style.scss" data)]
+             ["resources/public/exnihilo.html" (render "exnihilo.html" data)]
+      )))

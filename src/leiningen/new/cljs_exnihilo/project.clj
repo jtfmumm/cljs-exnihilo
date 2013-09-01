@@ -7,19 +7,19 @@
                             [org.clojure/clojurescript "0.0-1806"]
                             [compojure "1.1.5"]
                             [prismatic/dommy "0.1.1"]
-                            [hiccup "1.0.4"]]
+                            [hiccup "1.0.4"]
+                            [ring/ring-jetty-adapter "1.2.0"]]
   :source-paths ["src/clj"]
   :plugins [[lein-cljsbuild "0.3.2"]
-                 [ring "1.2.0"]]
-  :hooks [leiningen.cljsbuild]
+                 [lein-ring "0.8.7"]]
   :cljsbuild {
-              :builds {
-                        :main {
-                                   :source-path "src/cljs"
-                                   :compiler {
-                                              :output-to "resources/public/js/cljs.js"
-                                              :optimizations :simple
-                                              :pretty-print true}}}}
+              :builds [{
+                  :source-path ["src/cljs"]
+                  :id "main"
+                  :compiler {
+                                     :output-to "resources/public/js/cljs.js"
+                                     :optimizations :simple
+                                     :pretty-print true}}]}
   :main {{name}}.server
   :ring {:handler {{name}}.server/handler})
 
