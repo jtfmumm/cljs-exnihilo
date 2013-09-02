@@ -1,31 +1,30 @@
-server.clj is fake!  So is client.cljs!  Edit or replace those babies...
-
 # cljs-exnihilo
 
-A Leiningen template based on cljs-kickoff by Konrad Garus.
+A Lein template for ClojureScript projects.
 
 ## Usage
 
+First navigate to the location where you want your project directory to go.  Then create the project:
+
 ```bash
-lein new cljs-exnihilo my-project
+lein new cljs-exnihilo name-of-project
 ```
 
-Up and running (with CLJS compilation):
-```bash
-cd my-project
-lein ring server
-```
+Now run cljsbuild to initially compile cljs files.  Leave this running in the background if you want to recompile the cljs files whenever you change them:
 
-Interactive developmnt:
 ```bash
-# Shell 1 - start server:
-cd my-project
-lein ring server
-
-# Shell 2 - cljsbuild will recompile cljs whenever the files change:
-cd my-project
+cd name-of-project
 lein cljsbuild auto
 ```
+
+In a separate terminal, navigate to your directory and start the ring server:
+
+```bash
+cd name-of-project
+lein ring server
+```
+
+You are now ready to edit your project in LightTable, or whichever IDE you prefer.
 
 ## License
 
