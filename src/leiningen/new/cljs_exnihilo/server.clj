@@ -1,20 +1,29 @@
 (ns {{name}}.server
   (:require
-            [compojure.handler]
-            [compojure.route :as route]
-            [compojure.core :as compojure]
-            [ring.adapter.jetty :as jetty]
-            [ring.util.response :as response])
-  (:use [hiccup.core])
-  ;(:gen-class)
-  )
+            [compojure.handler :as handler]
+            [compojure.route :as route])
+  (:use [hiccup.core]
+           [compojure.core]))
 
-(compojure/defroutes main-routes
-  (compojure/GET "/" request
-                 (response/resource-response "public/index.html"))
-  (route/resources "/"))
+(defn view-layout [& content]
+  (html
+      [:head
+           [:meta {:http-equiv "Content-type"
+                        :content "text/html; charset=utf-8"}]
+           [:title "{{name}}"]]
+      [:body content]))
 
-(def handler (compojure.handler/api main-routes))
+(defn view-content []
+  (view-layout
+       [:h2 "{{name}}"]
+       [:p {:id "colorchange"} "You can make this paragraph blue.  Click it!"]
+       [:p {:id "clickhere"} "Or get yourself a nice alert by clicking here."]
+       [:script {:src "/js/jquery-1.10.2.js"}]
+       [:script {:src "/js/cljs.js"}]))
 
-(defn -main []
-  (jetty/run-jetty main-routes {:join? true :port 3000}))
+(defroutes main-routes
+  (GET "/" []
+       (view-content))
+      (route/resources "/"))
+
+(def app (handler/site main-routes))

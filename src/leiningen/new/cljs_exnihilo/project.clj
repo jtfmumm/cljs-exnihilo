@@ -6,6 +6,7 @@
   :dependencies [[org.clojure/clojure "1.5.1"]
                             [org.clojure/clojurescript "0.0-1806"]
                             [compojure "1.1.5"]
+                            [lib-noir "0.6.8"]
                             [prismatic/dommy "0.1.1"]
                             [hiccup "1.0.4"]
                             [ring/ring-jetty-adapter "1.2.0"]]
@@ -20,6 +21,6 @@
                                      :output-to "resources/public/js/cljs.js"
                                      :optimizations :simple
                                      :pretty-print true}}]}
-  :main {{name}}.server
-  :ring {:handler {{name}}.server/handler})
+  ;:main {{name}}.server
+  :ring {:handler {{name}}.server/app})
 
