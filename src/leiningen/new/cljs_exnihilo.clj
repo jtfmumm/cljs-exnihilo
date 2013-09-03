@@ -19,5 +19,5 @@
              ["resources/public/css/style.css" (render "style.css" data)]
              ["resources/public/css/style.scss" (render "style.scss" data)]
              ["resources/public/exnihilo.html" (render "exnihilo.html" data)]
-             ["resources/public/js/jquery-1.10.2.js" (render "jquery-1.10.2.js")]
+             ["resources/public/js/jquery-1.10.2.min.js" (render "jquery-1.10.2.min.js")]
       )))
