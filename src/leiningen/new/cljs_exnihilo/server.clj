@@ -1,7 +1,8 @@
 (ns {{name}}.server
   (:require
             [compojure.handler :as handler]
-            [compojure.route :as route])
+            [compojure.route :as route]
+            [ring.util.response :as response])
   (:use [hiccup.core]
            [compojure.core]))
 
