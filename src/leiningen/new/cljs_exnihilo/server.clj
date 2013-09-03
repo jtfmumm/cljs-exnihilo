@@ -19,7 +19,7 @@
        [:h2 "{{name}}"]
        [:p {:id "colorchange"} "You can make this paragraph blue.  Click it!"]
        [:p {:id "clickhere"} "Or get yourself a nice alert by clicking here."]
-       [:script {:src "/js/jquery-1.10.2.js"}]
+       [:script {:src "/js/jquery-1.10.2.min.js"}]
        [:script {:src "/js/cljs.js"}]))
 
 (defroutes main-routes
