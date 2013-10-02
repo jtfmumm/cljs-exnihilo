@@ -1,4 +1,4 @@
-(defproject cljs-exnihilo/lein-template "0.1.3"
+(defproject cljs-exnihilo/lein-template "0.1.4"
   :description "cljs-exnihilo: Leiningen template for ClojureScript"
   :url "http://github.com/jtfmumm/cljs-exnihilo"
   :eval-in-leiningen true
