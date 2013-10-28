@@ -1,8 +1,8 @@
 (ns leiningen.new.cljs-exnihilo
-  (:use [leiningen.new.templates :only [renderer name-to-path ->files]]
+  (:use [leiningen.new.templates :refer [renderer name-to-path ->files]]
         [leinjacker.utils :only [lein-generation]]))
 
- (def render (renderer "cljs-exnihilo"))
+(def render (renderer "cljs-exnihilo"))
 
 (defn cljs-exnihilo
   "Create a new ClojureScript project"
