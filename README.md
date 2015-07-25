@@ -31,7 +31,13 @@ In order to create a new project (and an associated directory with the same name
 lein new cljs-exnihilo name-of-project
 ```
 
-Now run cljsbuild to initially compile cljs files.  
+Now run 
+
+```bash
+cljsbuild
+```
+
+to initially compile cljs files.  
 
 Leave this running in the background if you want to recompile the cljs files whenever you change them:
 
