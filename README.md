@@ -4,7 +4,23 @@ A Lein template for ClojureScript projects.
 
 ## Usage
 
-First navigate to the location where you want your project directory to go.  Then create the project:
+First add :
+
+```
+[leinjacker "0.4.1"]
+```
+
+to your profiles.clj file in your .lein directory(which is usually in your home directory). 
+
+Now, navigate to the location where you want your project directory to go.  Then run:
+
+```bash
+lein deps
+```
+
+to grab the lein jacker dependencies.
+
+Finally, create the new project with:
 
 ```bash
 lein new cljs-exnihilo name-of-project
