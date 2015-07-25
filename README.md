@@ -39,7 +39,7 @@ cljsbuild
 
 to initially compile cljs files.  
 
-Leave this running in the background if you want to recompile the cljs files whenever you change them:
+In order to keep cljsbuild running in the background, recompiling cljs files when they are changed, run :
 
 ```bash
 cd name-of-project
